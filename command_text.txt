@@ -1,1 +1,35 @@
-docker run --name my_postgrs1 -d -e POSTGRES_PASSWORD=password -p 3004:5432 -v /home/sbuntu/test1/data/:/var/lib/postgresql/data postgres:17
+1. docker run --name my_postgrs -d -e POSTGRES_PASSWORD=password -e PGDATA=/data/pg -p 3004:5432 -v /home/vasa/data/:/var/lib/postgresql/data postgres:17
+2. docker rm my_postgrs -f
+--- Mon Sep  7 04:57:32 PM UTC 2026 ---
+total 136
+drwx------ 19 999  root             4096 Sep  7 16:29 .
+drwxr-xr-x  3 root root             4096 Sep  7 15:32 ..
+-rw-------  1 999  systemd-journal     3 Sep  7 16:29 PG_VERSION
+drwx------  5 999  systemd-journal  4096 Sep  7 16:29 base
+drwx------  2 999  systemd-journal  4096 Sep  7 16:31 global
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_commit_ts
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_dynshmem
+-rw-------  1 999  systemd-journal  5743 Sep  7 16:29 pg_hba.conf
+-rw-------  1 999  systemd-journal  2640 Sep  7 16:29 pg_ident.conf
+drwx------  4 999  systemd-journal  4096 Sep  7 16:29 pg_logical
+drwx------  4 999  systemd-journal  4096 Sep  7 16:29 pg_multixact
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_notify
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_replslot
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_serial
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_snapshots
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_stat
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_stat_tmp
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_subtrans
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_tblspc
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_twophase
+drwx------  4 999  systemd-journal  4096 Sep  7 16:29 pg_wal
+drwx------  2 999  systemd-journal  4096 Sep  7 16:29 pg_xact
+-rw-------  1 999  systemd-journal    88 Sep  7 16:29 postgresql.auto.conf
+-rw-------  1 999  systemd-journal 31065 Sep  7 16:29 postgresql.conf
+-rw-------  1 999  systemd-journal    36 Sep  7 16:29 postmaster.opts
+-rw-------  1 999  systemd-journal    94 Sep  7 16:29 postmaster.pid
+
+3. sudo cp -r /home/vasa/data /home/sbuntu/test1
+4. docker run --name my_postgrs -d -e POSTGRES_PASSWORD=password -e PGDATA=/data/pg -p 3004:5432 -v /home/sbuntu/test1/data/:/var/lib/postgresql/data postgres:17
+--- Mon Sep  7 05:02:05 PM UTC 2026 ---
+8933d19877698f22e1b9da2cfb6624ce44535341022ba151d722de4ca64c58d6
