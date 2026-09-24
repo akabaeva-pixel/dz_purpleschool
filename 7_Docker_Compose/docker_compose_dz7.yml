@@ -2,12 +2,17 @@ services:
   db:
     image: postgres:13
     container_name: db
-    environment: POSTGRES_PASSWORD=mysecretpassword
-    ports: 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
     networks:
       - my-pg-network
     volumes:
-    - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
+    env_file:
+      - .env
+
 networks:
   my-pg-network:
     driver: bridge
