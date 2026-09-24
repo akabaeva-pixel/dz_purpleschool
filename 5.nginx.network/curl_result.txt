@@ -1,0 +1,32 @@
+* Host localhost:8081 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed  Time    Time    Time   Current
+                                 Dload  Upload  Total   Spent   Left   Speed
+  0      0   0      0   0      0      0      0                              0*   Trying [::1]:8081...
+* Established connection to localhost (::1 port 8081) from ::1 port 57892 
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: localhost:8081
+> User-Agent: curl/8.18.0
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Server: nginx/1.30.4
+< Date: Thu, 03 Sep 2026 18:52:07 GMT
+< Content-Type: text/html
+< Content-Length: 113
+< Last-Modified: Thu, 03 Sep 2026 18:13:49 GMT
+< Connection: keep-alive
+< ETag: "6a99b8dd-71"
+< Accept-Ranges: bytes
+< 
+{ [113 bytes data]
+100    113 100    113   0      0  11294      0                              0100    113 100    113   0      0  11272      0                              0100    113 100    113   0      0  11252      0                              0
+* Connection #0 to host localhost:8081 left intact
+<!DOCTYPE html>
+<html>
+<head><title>My page</title></head>
+<body><h1>Hello from my container</h1></body>
+</html>

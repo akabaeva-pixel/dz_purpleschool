@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:13
+    container_name: db
+    environment: POSTGRES_PASSWORD=mysecretpassword
+    ports: 5432:5432
+    networks:
+      - my-pg-network
+    volumes:
+    - postgres_data:/var/lib/postgresql/data
+networks:
+  my-pg-network:
+    driver: bridge
+volumes:
+  postgres_data:
