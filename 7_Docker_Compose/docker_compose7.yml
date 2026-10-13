@@ -7,9 +7,9 @@ services:
     networks:
       - my-pg-network
     volumes:
-    - postgres_data:/var/lib/postgresql/data
-networks:
-  my-pg-network:
-    driver: bridge
-volumes:
-  postgres_data:
+        - postgres_data:/var/lib/postgresql/data
+    networks:
+      my-pg-network:
+        driver: bridge
+    volumes:
+      postgres_data:

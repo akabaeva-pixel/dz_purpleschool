@@ -1,0 +1,4 @@
+- repo: https://github.com/ansible/ansible-lint
+  rev: v26.10.0 # put latest release tag from https://github.com/ansible/ansible-lint/releases/
+  hooks:
+    - id: ansible-lint
